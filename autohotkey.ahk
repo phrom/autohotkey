@@ -32,3 +32,59 @@ ALTDRAG_WatchMouse:
     ALTDRAG_MouseStartX := EWD_MouseX  ; Update for the next timer-call to this subroutine.
     ALTDRAG_MouseStartY := EWD_MouseY
     return
+
+; This is based on https://www.howtogeek.com/howto/44915/how-to-change-window-transparency-in-windows-7/ but rewritten
+TransparencyDelta() {
+    return 32
+}
+
+WinGetTransparency()
+{
+    local Transparency
+    WinGet, Transparency, Transparent, A
+    if (Transparency = "")
+    {
+        Transparency = 255
+    }
+    return Transparency
+}
+
+Clamp(Value, MinV, MaxV)
+{
+    return Min(MaxV, Max(MinV, Value))
+}
+
+WinChangeTransparency(Delta)
+{
+    local Transparency := WinGetTransparency()
+    local NewTransparency := Clamp(Transparency + Delta, TransparencyDelta(), 255)
+    WinSet, Transparent, %NewTransparency%, A
+}
+
+#o::
+    ToggleTransparency()
+    {
+        local Transparency := WinGetTransparency()
+        if Transparency = 255
+        {
+            WinSet, Transparent, 127, A
+        }
+        else
+        {
+            WinSet, Transparent, OFF, A
+            WinSet, Transparent, 255, A
+        }
+        return
+    }
+
+#WheelUp::
+    IncreaseTransparency()
+    {
+        WinChangeTransparency(TransparencyDelta())
+    }
+
+#WheelDown::
+    DecreaseTransparency()
+    {
+        WinChangeTransparency(-TransparencyDelta())
+    }
