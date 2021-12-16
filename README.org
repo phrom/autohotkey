@@ -5,6 +5,9 @@ This is my personal AutoHotkey configuration / script. It implements the followi
 Using ALT+L. This is easier than Win+L and manually turning off the monitors. It requires [[https://www.nirsoft.net/utils/nircmd.html][nircmd]], available from chocolatey:
 
 : choco install nircmd
+** Hibernate
+Using ALT+H.
+
 ** Alt Drag to move windows
 Hold ALT, click anywhere inside a window, and move the mouse to drag the window around, similar to what is available in Linux. This is based on [[https://www.howtogeek.com/howto/windows-vista/get-the-linux-altwindow-drag-functionality-in-windows][this article from HowToGeek]], but adds handling of maximized windows: the original code ignores maximizes window, while this script unmaximizes the window, moves it to the position of the mouse, and then allows for dragging. I have removed the option of using ESC to cancel the drag operation, as I've been using this for years and never even noticed it was there until I looked more closely at the code now.
 

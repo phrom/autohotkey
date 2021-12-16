@@ -2,6 +2,9 @@
     Run, nircmd.exe monitor off
     DllCall("LockWorkStation")
 
+!h::
+    DllCall("PowrProf\SetSuspendState", "Int", 1, "Int", 0, "Int", 0)
+
 ; This script is modified from https://www.howtogeek.com/howto/windows-vista/get-the-linux-altwindow-drag-functionality-in-windows
 ; which is itself modified from: http://www.autohotkey.com/docs/scripts/EasyWindowDrag.htm
 ; which is licensed under the GPLv2: https://www.autohotkey.com/docs/license.htm
