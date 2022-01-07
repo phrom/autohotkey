@@ -1,3 +1,5 @@
+#SingleInstance Force
+
 !l::
 LockScreenAndMonitorStandby() {
 	Run, nircmd.exe monitor off
