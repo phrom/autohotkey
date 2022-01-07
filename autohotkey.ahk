@@ -1,5 +1,11 @@
 #SingleInstance Force
 
+!p::     Send {Media_Play_Pause}
+!Left::  Send {Media_Prev}
+!Right:: Send {Media_Next}
+!Up::    Send {Volume_Up}
+!Down::  Send {Volume_Down}
+
 !l::
 LockScreenAndMonitorStandby() {
 	Run, nircmd.exe monitor off

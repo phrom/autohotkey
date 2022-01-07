@@ -1,6 +1,13 @@
 * autohotkey
 This is my personal AutoHotkey configuration / script. It implements the following:
 
+** Emulate media keys
+- Alt + P: Play / Pause
+- Alt + Left: Previous track
+- Alt + Right: Next track
+- Alt + Up: Increase volume
+- Alt + Down: Decrease volume
+
 ** Lock and put the monitor in standby
 Using ALT+L. This is easier than Win+L and manually turning off the monitors. It requires [[https://www.nirsoft.net/utils/nircmd.html][nircmd]], available from chocolatey:
 
